@@ -1,26 +1,19 @@
 # Tarea-Processing_Daniel-Palacios
 Tarea Processing
 
+# https://openprocessing.org/sketch/1808817
 
-
-boolean newletter;              
-
-int numChars = 26;      // There are 26 characters in the alphabet
-color[] colors = new color[numChars];
-
+//Daniel Palacios
+// Hacer un Programa que dibuje triangulos de colores cuando se presione click
+//Crear canvas
 void setup() {
-  size(640, 360);
-  colorMode(HSB, width, height, 100); 
-  noStroke();
+  size(900, 500);
 }
 
-
-void draw() {
-  int whichBar = mouseX / barWidth;
-  if (whichBar != lastBar) {
-    int barX = whichBar * barWidth;
-    fill(barX, mouseY, 66);
-    rect(barX, 0, barWidth, height);
-    lastBar = whichBar;
-  }
+//Definir canvas, elegir color, dibujar, y hacer un triangulo especificando los 3 vértices
+void mousePressed() {
+	size(900, 500);
+	fill(mouseX,mouseY,mouseX/mouseY);
+  stroke(255);
+	triangle(mouseX, mouseY, mouseX+100, mouseY, mouseX+50, mouseY-100);
 }
